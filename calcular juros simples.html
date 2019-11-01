@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)https://solocode.azurewebsites.net/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Page Title</title>
+  </head>
+    <body>
+        <script>
+        function calcular()
+        {
+            P = document.getElementById("P").value;
+            T = document.getElementById("T").value;
+            R = document.getElementById("R").value;
+            SI = document.getElementById("SI")
+            SI.innerHTML="O resultado ="+(P*T*R/100); }
+      </script>  
+      <h1>Cálculo de juros simples</h1>
+      <span>Montante</span><input id="P"><br>
+      <span>Taxa</span><input id="R"><br>
+      
+      <span>Tempo</span><input id="T"><br>
+      <button onclick="calcular()">Calcular</button>
+      <p id="SI"></p>
+    
+</body></html>
