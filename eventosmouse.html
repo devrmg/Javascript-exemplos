@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)https://solocode.azurewebsites.net/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Page Title</title>
+    <style>@keyframes slide
+{
+   from
+   {
+      margin-top:0px; 
+   } 
+   to
+   {
+      margin-top:-200px;  
+   }
+}
+
+body
+{
+  background-color:grey;
+}
+
+#vertical
+{
+  display:flex;
+  width:400px;
+  overflow:hidden;
+  margin-top:100px;
+}
+
+#right, #middle, #left
+{
+  width:33.3%;
+  height:200px;
+  border-radius:5px;
+  border:solid 1px grey;
+  text-align:center;
+}
+
+#left 
+{
+  background-color:yellow;
+}
+
+#middle
+{
+  background-color:white;
+  animation-name:slide;
+  animation-duration:4s;
+  animation-timing-function:ease-in-out;
+  animation-iteration-count:infinite;
+  animation-direction:alternate;
+}
+
+#middle span
+{
+  color:yellow;
+}
+
+#right 
+{
+  background-color:yellow;
+}</style><script>window.onerror = function (msg, url, line, col, error) {var lineText = line == 0 ? "" : "<br /><span>Line: " + (line) + "</span>";var errorMessage = msg + lineText;window.parent.postMessage(errorMessage,"*");return false;} </script><script>window.onload = function()
+{
+  var left = document.getElementById('left');
+  var middle = document.getElementById('middle');
+  var right = document.getElementById('right');
+  var vertical = document.getElementById('vertical');
+  
+  left.onmouseover = function onediv() 
+  {
+    try
+    {
+    if(typeof middle !== 'undefined')
+    {
+      vertical.removeChild(middle);
+    }
+    if(typeof right !== 'undefined')
+    {
+      vertical.removeChild(right);
+    }
+      left.style.width = "100%";
+    }
+    catch(error)  
+    {
+        
+    }
+  }
+  
+  left.onmouseleave = function threediv()
+  {
+      vertical.appendChild(middle);
+      vertical.appendChild(right);
+      left.style.width = "33.3%";
+  }
+  
+  right.onmouseover = function twodiv()
+  {
+     if(typeof middle !== 'undefined')
+     {
+     vertical.removeChild(middle);
+     }
+  }
+  
+  right.onmouseleave = function twodivreverse()
+  {
+     vertical.appendChild(middle);
+     var title = document.getElementsByTagName('h1');
+     title[1].innerHTML = "Java can't you stop moving ?!"
+  }
+}</script></head>
+      
+    <body>     
+         
+        <div id="vertical">
+        
+          <div id="left" style="width: 33.3%;">
+           <h1>HTML</h1>
+           <p>With CSS</p>
+           <p>Try to mouseover me</p>
+          </div>
+          
+          
+          
+          
+          
+        <div id="middle">
+           <h1><span>J</span>ava</h1>
+          </div><div id="right">
+           <h1>Java can't you stop moving ?!</h1>
+           <p>'Java stop moving please'</p>
+           <p>mouseover me !</p>
+          </div></div>
+        
+    
+</body></html>
